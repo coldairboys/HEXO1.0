@@ -12,9 +12,10 @@ language: zh-TW
 timezone: Asia/Hong_Kong
 
 # URL
-## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://butterfly.js.org
-root: /
+## GitHub Pages project site for https://github.com/coldairboys/HEXO1.0
+## Hexo docs recommend including the subdirectory in both url and root.
+url: https://coldairboys.github.io/HEXO1.0
+root: /HEXO1.0/
 # permalink: :year/:month/:day/:title/
 permalink: posts/:abbrlink/
 
@@ -123,8 +124,8 @@ theme: butterfly
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:jerryc127/butterfly-demo.git
-  branch: master
+  repo: https://github.com/coldairboys/HEXO1.0.git
+  branch: main
   # other deployer
 
 search:
