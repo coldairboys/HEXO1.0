@@ -1,0 +1,46 @@
+name: Deploy Hexo Blog to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+# 关键：给 Actions 足够权限
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+
+      - name: Install Hexo CLI
+        run: npm install -g hexo-cli
+
+      # 关键：强制生成 package-lock.json，确保构建稳定
+      - name: Install dependencies
+        run: npm install --package-lock
+
+      # 关键：强制构建，确保 public 目录生成
+      - name: Build Hexo blog
+        run: hexo clean && hexo generate
+
+      # 关键：用 GitHub Pages 官方部署动作，彻底解决权限问题
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          force_orphan: true
