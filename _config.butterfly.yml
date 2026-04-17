@@ -45,6 +45,7 @@ menu:
     - 自言自語 || /talking/ || fas fa-cubes
     - 留言板|| /messageboard/ || fas fa-comment-dots
   示例: /link/ || fas fa-thumbs-up
+  Calendar: /calendar/ || fas fa-calendar-alt
 
 # Hide the child menu items in mobile sidebar
 hide_sidebar_menu_child: false
@@ -898,6 +899,7 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
+    - '<script src="https://cdn.jsdelivr.net/npm/echarts@4.8.0/dist/echarts.min.js"></script>'
     - '<style type="text/css">.card-announcement .social-button{margin: .6rem 0 0 0; text-align: center;}.card-announcement .social-button a{display: block; background-color: var(--btn-bg); color: var(--btn-color); line-height: 1.6rem; transition: all .3s; position: relative; z-index: 1;}.card-announcement .social-button a:first-child{margin-bottom: .4rem}</style>'
   bottom:
 
