@@ -127,6 +127,7 @@ deploy:
   type: git
   repo: https://github.com/coldairboys/HEXO1.0.git
   branch: gh-pages
+  ignore_hidden: false
   # other deployer
 
 search:
