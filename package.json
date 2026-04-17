@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "push": "hexo gc -w=52 && hexo clean && hexo generate && hexo douban && gulp && hexo deploy",
-    "show": "hexo gc -w=52 && hexo clean && hexo generate && hexo s",
+    "push": "hexo clean && hexo g && hexo douban && gulp && hexo deploy",
+    "show": "hexo clean && hexo g && hexo s",
     "update": "git init && git add . && git commit -m 'backup' && git push origin main",
-    "kk": "hexo gc -w=52 && hexo clean && hexo generate && hexo deploy"
+    "kk": "hexo clean && hexo g && hexo deploy"
   },
   "hexo": {
     "version": "5.3.0"
@@ -18,7 +18,6 @@
     "hexo": "^5.3.0",
     "hexo-abbrlink": "^2.2.1",
     "hexo-butterfly-douban": "^1.1.4",
-    "hexo-calendar": "^1.1.1",
     "hexo-deployer-git": "^2.1.0",
     "hexo-filter-nofollow": "^2.0.2",
     "hexo-generator-archive": "^1.0.0",
